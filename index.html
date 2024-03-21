@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Collector Horror Movies</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <h1>Collector Horror Movies</h1>
+    
+    <!-- Formulario para agregar nuevas películas -->
+    <form id="agregar-pelicula">
+        <input type="text" id="nombre-pelicula" placeholder="Nombre de la película" required>
+        <textarea id="descripcion-pelicula" placeholder="Descripción de la película" required></textarea>
+        <input type="file" id="portada-pelicula" accept="image/*" required>
+        <button type="submit">Agregar</button>
+        
+        <!-- Nuevo campo para seleccionar película a eliminar -->
+        <select id="eliminar-pelicula">
+            <option value="">Seleccionar película a eliminar</option>
+        </select>
+
+        <!-- Botón de eliminar -->
+        <button type="button" id="eliminar-button">Eliminar</button>
+    </form>
+
+    <!-- Contenedor para las películas -->
+    <div id="peliculas-container" class="peliculas-container">
+        <div class="pelicula">
+            <div class="has-visto">
+                <label for="visto-pelicula">¿La has visto?</label>
+                <input type="checkbox" id="visto-pelicula" name="visto-pelicula">
+            </div>
+            <!-- Resto del contenido de la tarjeta de película -->
+            <div class="pelicula-descripcion">
+            </div>
+        </div>
+        <!-- Fin de la tarjeta de película -->
+    </div>
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>

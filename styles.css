@@ -1,0 +1,151 @@
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #f83030; /* Cambiado a texto blanco */
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #ff4500;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff8c00;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Courier New', monospace;
+    color: #ff4500;
+    margin: 10px 0;
+}
+
+p {
+    margin: 0 0 10px;
+    line-height: 1.6;
+}
+
+ul, ol {
+    margin: 0 0 10px;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Estilos para la tarjeta de película */
+.pelicula-card {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    border: 2px solid #ff4500;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.pelicula-card .pelicula-portada,
+.pelicula-card .pelicula-descripcion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease;
+    border-radius: 10px;
+}
+
+.pelicula-card .pelicula-portada {
+    transform: rotateY(0deg);
+}
+
+.has-visto {
+    position: absolute;
+    bottom: 0; /* Coloca el texto justo debajo de la portada */
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 0 0 10px 10px;
+    transform: translateY(190%); /* Mueve el texto hacia abajo para que esté fuera de la tarjeta */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pelicula-card:hover .has-visto {
+    opacity: 1; /* Mostrar al pasar el ratón sobre la tarjeta */
+}
+
+.pelicula-card.flipped .pelicula-portada {
+    transform: rotateY(-180deg);
+}
+
+.pelicula-card .pelicula-descripcion {
+    transform: rotateY(180deg);
+    padding: 15px;
+    background-color: #2b2b2b;
+    color: #ff4500;
+    border-radius: 10px;
+    overflow-y: auto;
+    max-height: 100%;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.pelicula-card.flipped .pelicula-descripcion {
+    transform: rotateY(0deg);
+}
+
+.pelicula-portada {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.eliminar-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ff4500;
+    color: #ffffff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Estilos para la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ff4500;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ff6347;
+}
